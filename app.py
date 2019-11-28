@@ -4,7 +4,7 @@ import urllib3
 
 from flask import Flask, render_template, request, redirect, send_file, url_for
 
-from s3_demo import list_files, download_file, upload_file
+from s3_methods import list_files, download_file, upload_file
 
 
 app = Flask(__name__)
