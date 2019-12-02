@@ -28,11 +28,11 @@ This should create an OBC and other stuff needed for the app itself like POD,SVC
 At this point your app is ready to be accessed externally. Grab the URL and browse it
 
 - A simple landing page of the app will appear
-[](image2.png)
+![](https://github.com/ksingh7/openshift-photo-album-app/raw/master/image2.jpg)
 - When you enter the album, you can upload or view your photos
-[](image3.png)
+![](https://github.com/ksingh7/openshift-photo-album-app/raw/master/Image-3.png)
 - Finally looks like 
-[](image4.png)
+![](https://github.com/ksingh7/openshift-photo-album-app/raw/master/Image-4.jpg)
 
 
 
