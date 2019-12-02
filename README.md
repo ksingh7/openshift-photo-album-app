@@ -4,7 +4,7 @@ The purpose of this APP is to demonstrate, what it takes for a developer to inte
 
 # The Working
 
-![](image-1.png)
+![](https://github.com/ksingh7/openshift-photo-album-app/raw/master/Image-1.png)
 
 # Deployment
 
