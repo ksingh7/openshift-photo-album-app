@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>K8s Photo Album App</title>
-  <link href="{{ url_for('static', filename='dist/css/bootstrap.min.css') }}" rel="stylesheet">
+  <title>one page</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
 header.masthead {
@@ -37,23 +37,24 @@ img.bg {
 </style>
 <body>
   <header class="masthead text-white text-center">
-      <img src="{{ url_for('static', filename='dist/images/bg-masthead2.jpg') }}" alt="bckgound" class="bg" />
+      <img src="bg-masthead2.jpg" alt="bckgound" class="bg" />
 
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5" style="font-size: 35px;">Enter Password To Access Your Photo Album </h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 
-          <form name="form_album_password" action="/storage">
+          <form name="form_album_password" >
 
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary" >Click Here To Access Your Photo Album </button>
-
+                <input type="password" name="secret" id="secret" class="form-control form-control-lg" placeholder="your password is ...">
               </div>
               <div class="col-12 col-md-3">
+                <button type="button" class="btn btn-block btn-lg btn-primary" onclick="return submitcheck(this);"  >Access</button>
               </div>
             </div>
           </form>

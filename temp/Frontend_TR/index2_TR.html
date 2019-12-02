@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+
+<body>
+<form  name="form_album_password" >
+  <input type="password" name="secret" id="secret" placeholder="your password is ...">
+  <button type="button" onclick="return submitcheck(this);" >Access </button>
+
+</form>
+<script>
+
+function submitcheck(element)
+{
+  var url = 'http://localhost:8081'
+  var secret = document.getElementById("secret").value;
+  //alert("The action to execute is " + secret);
+  window.location = `${url}/validatePassword?secret=${secret}`;
+  //window.location = "http://localhost:8081" ;
+  //alert("The action to execute is " + secret);
+  //return false;
+  /*let xml = new XMLHttpRequest()
+        xml.open("GET", `${url}/validatePassword?keyword=${secret}`, true);
+        xml.onload = function (event) {
+            console.log(event);
+        };
+        xml.send() */
+
+}
+</script>
+</body>
+</html>

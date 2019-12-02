@@ -81,7 +81,7 @@ items:
                   name: photo-album
                   key: AWS_SECRET_ACCESS_KEY          
           ports:
-          - containerPort: 8080
+          - containerPort: 80
             protocol: TCP
           resources: {}
     test: false
@@ -113,10 +113,10 @@ items:
     name: photo-album
   spec:
     ports:
-    - name: 8080-tcp
-      port: 8080
+    - name: 80-tcp
+      port: 80
       protocol: TCP
-      targetPort: 8080
+      targetPort: 80
     selector:
       app: photo-album
       deploymentconfig: photo-album
@@ -135,7 +135,7 @@ metadata:
   name: photo-album
 spec:
   port:
-    targetPort: 8080-tcp
+    targetPort: 80-tcp
   subdomain: ""
   to:
     kind: Service

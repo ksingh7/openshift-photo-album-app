@@ -3,19 +3,74 @@
   <head>
     <title>K8s Photo Album App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/lightbox.min.css') }}">
+
+    <style>
+        div.gallery {
+          margin: 20px;
+          border: 5px solid #ccc;
+          float: left;
+          width: 250px;
+        }
+        
+        div.gallery:hover {
+          border: 5px solid #777;
+        }
+        
+        div.gallery img {
+          width: 100%;
+          height: auto;
+        }
+        
+        div.desc {
+          padding: 15px;
+          text-align: center;
+        }
+        
+        .container{
+            padding-left: 18%;
+            padding-right: 18%;
+        }
+        .from{
+            text-align: center;
+            padding: 41px;
+        }
+        .button {
+          background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 9px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: .3rem;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .custom-file-upload {
+            border: 3px solid #ccc;
+            display: inline-block;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: large;
+        }
+        </style>
+
   </head>
   
   <body>
-    <div class="content">    
-        <h2> {{ msg }}</h2>
-    
-        <div>
+    <div class='container'>
+<!--
+    <div class='container'>
           <h3>Upload your file here:</h3>
           <form method="POST" action="/upload" enctype=multipart/form-data>
             <input type=file name=file>
             <input type=submit value=Upload>
           </form>
-        </div>
+    </div>
     
     <section>
         <div>
@@ -25,10 +80,31 @@
                 <img class="example-image"  src="http://api.rethumb.com/v1/square/200/{{ item.url }}" /> </a>            
               {% endfor %}
           </ul>
+        </div>
     </section>
+  -->
 
+  <div class='from'>
+      <form method="POST" action="/upload" enctype=multipart/form-data>
+        <label for="file-upload" class="custom-file-upload">
+          <i class="fa fa-cloud-upload"></i> Click to Upload New Photos To Your Album
+        </label>
+        <input id="file-upload" type="file" name=file />
+        <input class="button" type="submit" value=Upload>
+        </form>
     </div>
+    
+          {% for item in contents %}
+          <div class="gallery">
+
+          <a class="example-image-link" href="{{ item.url }}" data-lightbox="example-1">
+          <img width="250" height="400" src="http://api.rethumb.com/v1/square/200/{{ item.url }}" /> </a>
+          
+          </div>      
+          {% endfor %}
+
     <script src="{{ url_for('static', filename='dist/js/lightbox-plus-jquery.min.js') }}"></script>  
+  
   </body>
 </html> 
  

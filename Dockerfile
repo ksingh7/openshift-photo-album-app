@@ -8,7 +8,7 @@ COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install -r requirements.txt
 COPY . /app
-EXPOSE 8080
+
 
 #ENV ENDPOINT_URL "https://s3-openshift-storage.apps.ocp42.ceph-s3.com"
 #ENV AWS_ACCESS_KEY_ID "ewXH8ErFOXMlfxqqXWoD"
@@ -20,6 +20,8 @@ ENV ENDPOINT_URL "$ENDPOINT_URL"
 ENV AWS_ACCESS_KEY_ID "$AWS_ACCESS_KEY_ID"
 ENV AWS_SECRET_ACCESS_KEY "$AWS_SECRET_ACCESS_KEY"
 
+EXPOSE 80
+#EXPOSE 8081
 
 ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
