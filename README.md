@@ -32,7 +32,7 @@ At this point your app is ready to be accessed externally. Grab the URL and brow
 - When you enter the album, you can upload or view your photos
 ![](https://github.com/ksingh7/openshift-photo-album-app/raw/master/Image-3.png)
 - Finally looks like 
-![](https://github.com/ksingh7/openshift-photo-album-app/raw/master/Image-4.jpg)
+![](https://github.com/ksingh7/openshift-photo-album-app/raw/master/image-4.jpg)
 
 
 
